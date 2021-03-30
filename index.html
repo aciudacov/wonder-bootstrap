@@ -25,6 +25,11 @@
   <link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
   <meta name="theme-color" content="#7952b3">
 
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
 
   <style>
     .bd-placeholder-img {
@@ -576,30 +581,10 @@
               <h5 class="modal-title" id="conceptModalLabel">Концепция здоровья</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <h6>Секрет сохранения здоровья прост и основан всего на двух принципах</h6>
-              <ul>
-                <li>Комплексный подход. Начните позитивно мыслить, общайтесь с приятными людьми.
-                  Займитесь спортом, правильно питайтесь, пейте живую воду, вовремя очищайте организм и научитесь
-                  защищать
-                  его
-                  от внешних факторов.
-                </li>
-                <li>Регенерация клеток - восстановление поврежденных тканей и органов.</li>
-              </ul>
-              <p>Давайте более подробно остановимся на втором пункте - регенерации клеток.
-                Человеческий организм состоит из 12 систем. Каждая система имеет органы и ткани, которые в свою очередь
-                состоят из триллиона клеток. Состояние нашего здоровья полностью зависит от образа жизни, а также от состояния клеток. Для того,
-                чтобы клетки и их потомство были здоровы, необходимо отказаться от вредных привычек (курение, алкоголь,
-                газированные напитки, мучное, сладкое, майонез, пакетированные соки, жареное, консервы).</p>
-                <ul>
-                  <li>Пейте в течение дня чистую структурированную, обогащенную природными минералами Живую воду Coral-Mine.</li>
-                  <li>Минимум два раза в год очищайте организм от шлаков, токсинов, бактерий, вирусов и паразитов.</li>
-                  <li>Полноценно кормите всем необходимым - клеточное питание.</li>
-                  <li>Защитите от воздействия внешних факторов.</li>
-                </ul>
-                <p>Помните! Занимаясь ежедневно профилактикой, вы сэкономите не только время, но
-                  и деньги! Лечение обойдется намного дороже!</p>
+            <div class="modal-body" id="concept_body">
+              <script>$(function(){
+                $("#concept_body").load("./modals/concept_modal_content.html"); 
+              });</script>
             </div>
             <div class="modal-footer">
             </div>
@@ -1877,8 +1862,10 @@
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
   </script>
 
-
-
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 
   <div at-magnifier-wrapper="">
     <div class="at-theme-light">
