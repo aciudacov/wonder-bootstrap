@@ -86,7 +86,7 @@ function generateQuizes(){
         + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#quiz_modal" + num
         + "\">Пройти тест</button></div></div></div></div></div>"
         + "<div class=\"modal fade\" id=\"quiz_modal" + num + "\" tabindex=\"-1\" aria-labelledby=\"conceptModalLabel\" style=\"display: none;\" aria-hidden=\"true\">"
-        + "<div class=\"modal-dialog modal-xl modal-dialog-scrollable\"><div class=\"modal-content\">"
+        + "<div class=\"modal-dialog modal-lg modal-dialog-scrollable\"><div class=\"modal-content\">"
         + "<div class=\"modal-header\"><h5 class=\"modal-title\" id=\"quiz" + num + "ModalLabel\">" + element.text + "</h5>"
         + "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button></div>"
         + "<div class=\"modal-body\" id=\"quiz" + num + "_body\"> +</div><div class=\"modal-footer\"></div></div></div></div>";
