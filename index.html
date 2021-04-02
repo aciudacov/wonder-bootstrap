@@ -8,9 +8,9 @@
   <meta name="description" content="">
   <title>Coral Club Moldova</title>
 
-  <!-- Bootstrap core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png"
@@ -32,9 +32,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
   </script>
-
-  <script src="scripts/quiz_generator.js"></script>
-
 
   <style>
     .bd-placeholder-img {
@@ -95,7 +92,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
                 aria-expanded="false">Информация</a>
               <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                <li><a class="dropdown-item" href="#"><b>Контакты</b></a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#contacts_modal"><b>Контакты</b></a></li>
                 <li><a class="dropdown-item" href="#reviews">Отзывы</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и ответы</a></li>
                 <li><a class="dropdown-item" href="#">О компании</a></li>
@@ -613,7 +610,7 @@
       <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="qaModalLabel">Концепция здоровья</h5>
+            <h5 class="modal-title" id="qaModalLabel">Вопросы и ответы</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="qa_body">
@@ -622,6 +619,26 @@
                 $.getScript('./scripts/qa_generator.js', function(){generateQA();
                 });
               });
+            </script>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="contacts_modal" tabindex="-1" aria-labelledby="contactsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contactsModalLabel">Контакты</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="contacts_body">
+            <script>
+              $(function () {
+                  $("#contacts_body").load("./modals/contacts_modal_content.html");
+                });
             </script>
           </div>
           <div class="modal-footer">
