@@ -99,7 +99,7 @@
                     ответы</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
                     компании</a></li>
-                <li><a class="dropdown-item" href="#">Акции</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#promo_modal">Акции</a></li>
                 <li><a class="dropdown-item" href="#">Оплата и доставка</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#business_modal">Бизнес под
                     ключ</a></li>
@@ -686,6 +686,34 @@
                 $("#business_body").load("./modals/business_modal_content.html");
               });
             </script>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="promo_modal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="promoModalLabel">Акции</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="promo_body">
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="promo_container">
+                  <script>
+                    $(function () {
+                      $.getScript('./scripts/promo_generator.js', function () {
+                        generatePromos();
+                      });
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
           </div>
