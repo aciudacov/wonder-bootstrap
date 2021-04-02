@@ -95,7 +95,7 @@
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#contacts_modal"><b>Контакты</b></a></li>
                 <li><a class="dropdown-item" href="#reviews">Отзывы</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и ответы</a></li>
-                <li><a class="dropdown-item" href="#">О компании</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О компании</a></li>
                 <li><a class="dropdown-item" href="#">Акции</a></li>
                 <li><a class="dropdown-item" href="#">Оплата и доставка</a></li>
                 <li><a class="dropdown-item" href="#">Бизнес под ключ</a></li>
@@ -638,6 +638,26 @@
             <script>
               $(function () {
                   $("#contacts_body").load("./modals/contacts_modal_content.html");
+                });
+            </script>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="company_modal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="companyModalLabel">О компании</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="company_body">
+            <script>
+              $(function () {
+                  $("#company_body").load("./modals/company_modal_content.html");
                 });
             </script>
           </div>
