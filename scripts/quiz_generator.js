@@ -470,15 +470,17 @@ var quizOptions = [
 
 function loadQuizBody(id){
     var quizClass = "#quiz" + id + "_body";
+	var radioNo = 1;
     quizOptions[id-1].questions.forEach(q => {
         toAppendStr = "<h5>" + q + "</h5><form><div class=\"form-check form-check-inline\">"
-            + "<input class=\"form-check-input high-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadio1\""
-            + "value=\"option1\" data-quizIndex=\"2\"><label class=\"form-check-label\" for=\"inlineRadio1\">Да</label></div>"
-            + "<div class=\"form-check form-check-inline\"><input class=\"form-check-input low-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadio2\" value=\"option2\" data-quizIndex=\"1\">"
-            + "<label class=\"form-check-label\" for=\"inlineRadio2\">Иногда</label></div><div class=\"form-check form-check-inline\">"
-            + "<input class=\"form-check-input no-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadio3\" value=\"option3\" data-quizIndex=\"0\">"
-            + "<label class=\"form-check-label\" for=\"inlineRadio3\">Нет</label></div></form>";
+            + "<input class=\"form-check-input high-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadioYes" + id + "_" + radioNo + "\""
+            + "value=\"option1\" data-quizIndex=\"2\"><label class=\"form-check-label\" for=\"inlineRadioYes" + id + "_" + radioNo + "\">Да</label></div>"
+            + "<div class=\"form-check form-check-inline\"><input class=\"form-check-input low-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadioSometimes" + id + "_" + radioNo
+			+ "\" value=\"option2\" data-quizIndex=\"1\"><label class=\"form-check-label\" for=\"inlineRadioSometimes" + id + "_" + radioNo + "\">Иногда</label></div><div class=\"form-check form-check-inline\">"
+            + "<input class=\"form-check-input no-value\" type=\"radio\" name=\"inlineRadioOptions\" id=\"inlineRadioNo" + id + "_" + radioNo + "\" value=\"option3\" data-quizIndex=\"0\">"
+            + "<label class=\"form-check-label\" for=\"inlineRadioNo" + id + "_" + radioNo + "\">Нет</label></div></form>";
         $(quizClass).append(toAppendStr);
+		radioNo++;
     });
     resStr = "<button type=\"button\" class=\"btn btn-primary\">Результаты</button><div id=\"results\"></div>";
     $(quizClass).append(resStr);
