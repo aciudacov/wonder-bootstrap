@@ -507,3 +507,59 @@ function generateQuizes(){
       });
 
 }
+
+function calcResults() {
+    // only update the results div if all questions have been answered
+    if (quizSteps.find('.active').length == quizSteps.length){
+        var resultsTitle = $('#results h1'),
+            resultsDesc = $('#results .desc');
+        
+        // calc lowest possible score
+        var lowestScoreArray = $('#quizzie .no-value').map(function() {
+            return $(this).attr('data-quizIndex');
+        });
+        var minScore = 0;
+        for (var i = 0; i < lowestScoreArray.length; i++) {
+            minScore += lowestScoreArray[i] << 0;
+        }
+        // calculate highest possible score
+        var highestScoreArray = $('#quizzie .high-value').map(function() {
+            return $(this).attr('data-quizIndex');
+        });
+        var maxScore = 0;
+        for (var i = 0; i < highestScoreArray.length; i++) {
+            maxScore += highestScoreArray[i] << 0;
+        }
+        // calc range, number of possible results, and intervals between results
+        var range = maxScore - minScore,
+            numResults = resultOptions.length,
+            interval = range / (numResults - 1),
+            increment = '',
+            n = 0; //increment index
+        // incrementally increase the possible score, starting at the minScore, until totalScore falls into range. then match that increment index (number of times it took to get totalScore into range) and return the corresponding index results from resultOptions object
+        while (n < numResults) {
+            increment = minScore + (interval * n);
+            if (totalScore < 5) {
+                // populate results
+                resultsTitle.replaceWith("<h1>" + resultOptions[0].title + "</h1>");
+                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[0].desc + "</p>");
+                return;
+            } else 
+            if (totalScore < 10 && totalScore > 4) {
+                // populate results
+                resultsTitle.replaceWith("<h1>" + resultOptions[1].title + "</h1>");
+                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[1].desc + "</p>");
+                return;
+            } else 
+            if (totalScore > 9) {
+                // populate results
+                resultsTitle.replaceWith("<h1>" + resultOptions[2].title + "</h1>");
+                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[2].desc + "</p>");
+                return;
+            } else 
+            {
+                n++;
+            }
+        }
+    }
+}
