@@ -9,8 +9,8 @@ var quizzes = [
 		"bad_result":"<h5>У Вас очень выраженная степень интоксикации организма</h5>",
 		"bad_result_details":"<p>Срочно необходимо принять меры по дезинтоксикации организма. Обратитесь к консультанту через удобную вам форму связи.</p>",
 		"good_treshold": 5,
-		"mid_treshold_1": 4,
-		"mid_treshold_2": 10,
+		"mid_treshold_1": 10,
+		"mid_treshold_2": 4,
 		"bad_treshold": 9,
 		"questions":["Вас беспокоит повышенная температура тела (37 градусов и выше)?", "Вас беспокоит сильная головная боль?", "Вас беспокоит повышенная потливость?", "Вас беспокоит ломота в мышцах?", "Вас беспокоит сильная слабость?", "У Вас была или есть рвота?", "Вас беспокоит тошнота?", "Вы наблюдали у себя спутанность сознания?", "Вас беспокоят депрессии?"]
     },
@@ -388,12 +388,10 @@ function generateQuizes(){
 
 function calcResults(id) {
 	var checkboxes = $('input[name=inlineRadioOptions]:checked', '#quiz' + id + '_body');
-	console.log(checkboxes);
 	var quizResult = 0;
 	$(checkboxes).each(function(){
 		quizResult += parseInt($(this).attr("data-quizIndex"));
 	});
-	console.log(quizResult);
 	var currentResult = quizzes[id-1];
 	var divResult = $("#results" + id);
 	if (quizResult < currentResult.good_treshold) {
