@@ -368,7 +368,7 @@ function generateQuizes(){
     var num = 1;
     quizzes.forEach(element => {
         toAppendString = "<div class=\"col\" id=\"quiz" + num + "\"><div class=\"card shadow-sm\"><img src=\"img/quiz/quiz"
-        + num + ".jpg\" class='bg-placeholder-img card-img-top' width=\"100%\" height=\"225\""
+        + num + ".jpg\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
         + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
         + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
         + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
