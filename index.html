@@ -97,7 +97,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdown05">
                 <li><a class="dropdown-item" href="#"><b>Контакты</b></a></li>
                 <li><a class="dropdown-item" href="#reviews">Отзывы</a></li>
-                <li><a class="dropdown-item" href="#">Вопросы и ответы</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и ответы</a></li>
                 <li><a class="dropdown-item" href="#">О компании</a></li>
                 <li><a class="dropdown-item" href="#">Акции</a></li>
                 <li><a class="dropdown-item" href="#">Оплата и доставка</a></li>
@@ -118,7 +118,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Официальный сайт</a>
+              <a class="nav-link" aria-current="page" href="http://coral.club">Официальный сайт</a>
             </li>
           </ul>
 
@@ -606,6 +606,28 @@
 
       <hr class="featurette-divider">
 
+    </div>
+
+    <!--Here are rest of the modals-->
+    <div class="modal fade" id="qa_modal" tabindex="-1" aria-labelledby="qaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="qaModalLabel">Концепция здоровья</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="qa_body">
+            <script>
+              $(function () {
+                $.getScript('./scripts/qa_generator.js', function(){generateQA();
+                });
+              });
+            </script>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer class="container">
