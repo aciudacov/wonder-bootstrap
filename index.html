@@ -100,7 +100,7 @@
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
                     компании</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#promo_modal">Акции</a></li>
-                <li><a class="dropdown-item" href="#">Оплата и доставка</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#payship_modal">Оплата и доставка</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#business_modal">Бизнес под
                     ключ</a></li>
               </ul>
@@ -714,6 +714,26 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="payship_modal" tabindex="-1" aria-labelledby="payshipModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="payshipModalLabel">Оплата и доставка</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="payship_body">
+            <script>
+              $(function () {
+                $("#payship_body").load("./modals/payship_modal_content.html");
+              });
+            </script>
           </div>
           <div class="modal-footer">
           </div>
