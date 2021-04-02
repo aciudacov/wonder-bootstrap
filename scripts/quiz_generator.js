@@ -482,7 +482,7 @@ function loadQuizBody(id){
         $(quizClass).append(toAppendStr);
 		radioNo++;
     });
-    resStr = "<button type=\"button\" class=\"btn btn-primary\">Результаты</button><div id=\"results\"></div>";
+    resStr = "<button type=\"button\" class=\"btn btn-primary\" id=\"quizButton" + id + "\" onclick=\"calcResults(" + id + ")\">Результаты</button><div id=\"results" + id + "\"></div>";
     $(quizClass).append(resStr);
 }
 
@@ -508,58 +508,26 @@ function generateQuizes(){
 
 }
 
-function calcResults() {
-    // only update the results div if all questions have been answered
-    if (quizSteps.find('.active').length == quizSteps.length){
-        var resultsTitle = $('#results h1'),
-            resultsDesc = $('#results .desc');
-        
-        // calc lowest possible score
-        var lowestScoreArray = $('#quizzie .no-value').map(function() {
-            return $(this).attr('data-quizIndex');
-        });
-        var minScore = 0;
-        for (var i = 0; i < lowestScoreArray.length; i++) {
-            minScore += lowestScoreArray[i] << 0;
-        }
-        // calculate highest possible score
-        var highestScoreArray = $('#quizzie .high-value').map(function() {
-            return $(this).attr('data-quizIndex');
-        });
-        var maxScore = 0;
-        for (var i = 0; i < highestScoreArray.length; i++) {
-            maxScore += highestScoreArray[i] << 0;
-        }
-        // calc range, number of possible results, and intervals between results
-        var range = maxScore - minScore,
-            numResults = resultOptions.length,
-            interval = range / (numResults - 1),
-            increment = '',
-            n = 0; //increment index
-        // incrementally increase the possible score, starting at the minScore, until totalScore falls into range. then match that increment index (number of times it took to get totalScore into range) and return the corresponding index results from resultOptions object
-        while (n < numResults) {
-            increment = minScore + (interval * n);
-            if (totalScore < 5) {
-                // populate results
-                resultsTitle.replaceWith("<h1>" + resultOptions[0].title + "</h1>");
-                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[0].desc + "</p>");
-                return;
-            } else 
-            if (totalScore < 10 && totalScore > 4) {
-                // populate results
-                resultsTitle.replaceWith("<h1>" + resultOptions[1].title + "</h1>");
-                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[1].desc + "</p>");
-                return;
-            } else 
-            if (totalScore > 9) {
-                // populate results
-                resultsTitle.replaceWith("<h1>" + resultOptions[2].title + "</h1>");
-                resultsDesc.replaceWith("<p class='desc'>" + resultOptions[2].desc + "</p>");
-                return;
-            } else 
-            {
-                n++;
-            }
-        }
-    }
+function calcResults(id) {
+	var checkboxes = $('input[name=inlineRadioOptions]:checked', '#quiz' + id + '_body');
+	console.log(checkboxes);
+	var quizResult = 0;
+	$(checkboxes).each(function(){
+		quizResult += parseInt($(this).attr("data-quizIndex"));
+	});
+	console.log(quizResult);
+	var currentResult = quizResults[id-1];
+	var divResult = $("#results" + id);
+	if (quizResult < currentResult.good_treshold) {
+		$(divResult).html(currentResult.good_result + currentResult.good_result_details);
+		return;
+	} else 
+	if (quizResult < currentResult.mid_treshold_1 && quizResult > currentResult.mid_treshold_2) {
+		$(divResult).html(currentResult.mid_result + currentResult.mid_result_details);
+		return;
+	} else 
+	if (quizResult > currentResult.bad_treshold) {
+		$(divResult).html(currentResult.bad_result + currentResult.bad_result_details);
+		return;
+	}
 }
