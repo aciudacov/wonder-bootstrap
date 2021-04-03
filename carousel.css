@@ -58,13 +58,22 @@ body {
   min-width: 100%;
   height: 90vh;
 }
-
+/*change slider image on mobile*/
 @media all and (orientation:portrait){
   .carousel-item{
     height: 40vh;
   }
   .carousel-item > img{
     height: 40vh;
+    object-fit: none;
+    object-position: 100% 25%;
+  }
+  .btn-lg{
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .carousel-caption{
+    bottom: 0.5rem;
   }
 }
 
