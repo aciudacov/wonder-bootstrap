@@ -360,7 +360,7 @@ function loadQuizBody(id){
         $(quizClass).append(toAppendStr);
 		radioNo++;
     });
-    resStr = "<button type=\"button\" class=\"btn btn-primary\" id=\"quizButton" + id + "\" onclick=\"calcResults(" + id + ")\">Результаты</button><div id=\"results" + id + "\"></div>";
+    resStr = "<button type=\"button\" class=\"btn btn-primary\" id=\"quizButton" + id + "\" onclick=\"calcResults(this, " + id + ")\">Результаты</button><div id=\"results" + id + "\"></div>";
     $(quizClass).append(resStr);
 }
 
@@ -386,24 +386,35 @@ function generateQuizes(){
 
 }
 
-function calcResults(id) {
+function calcResults(elem, id) {
 	var checkboxes = $('input[name=inlineRadioOptions]:checked', '#quiz' + id + '_body');
-	var quizResult = 0;
-	$(checkboxes).each(function(){
-		quizResult += parseInt($(this).attr("data-quizIndex"));
-	});
-	var currentResult = quizzes[id-1];
 	var divResult = $("#results" + id);
-	if (quizResult < currentResult.good_treshold) {
-		$(divResult).html(currentResult.good_result + currentResult.good_result_details);
+	var leng = $(checkboxes).length;
+	var questions = quizzes[id-1].questions.length;
+	if (leng != questions)
+	{
+		shake(elem);
+		$(divResult).html("<h5>Вы ответили не на все вопросы!</h5>");
 		return;
-	} else 
-	if (quizResult < currentResult.mid_treshold_1 && quizResult > currentResult.mid_treshold_2) {
-		$(divResult).html(currentResult.mid_result + currentResult.mid_result_details);
-		return;
-	} else 
-	if (quizResult > currentResult.bad_treshold) {
-		$(divResult).html(currentResult.bad_result + currentResult.bad_result_details);
-		return;
+	}
+	else
+	{
+		var quizResult = 0;
+		$(checkboxes).each(function(){
+			quizResult += parseInt($(this).attr("data-quizIndex"));
+		});
+		var currentResult = quizzes[id-1];
+		if (quizResult < currentResult.good_treshold) {
+			$(divResult).html(currentResult.good_result + currentResult.good_result_details);
+			return;
+		} else 
+		if (quizResult < currentResult.mid_treshold_1 && quizResult > currentResult.mid_treshold_2) {
+			$(divResult).html(currentResult.mid_result + currentResult.mid_result_details);
+			return;
+		} else 
+		if (quizResult > currentResult.bad_treshold) {
+			$(divResult).html(currentResult.bad_result + currentResult.bad_result_details);
+			return;
+		}
 	}
 }
