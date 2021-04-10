@@ -5387,8 +5387,8 @@ function generateProducts(container, category){
             + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
             + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
             + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
-            + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"null" +
-            + "\">Подробнее</button></div></div></div></div></div>";
+            + "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Подробнее</button>"
+            + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" onclick=\"window.open('" + element.link + "')\">Узнать цену</button></div></div></div></div></div></div>";
             $(container).append(toAppendString);
         }
       });
