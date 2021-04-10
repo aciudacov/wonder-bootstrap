@@ -34,6 +34,7 @@
   </script>
 
   <script src="scripts/button_shake.js"></script>
+  <script src="scripts/catalog_generator.js"></script>
 
   <style>
     .bd-placeholder-img {
@@ -49,11 +50,20 @@
         font-size: 3.5rem;
       }
     }
-    .btn-margin{
+
+    .btn-margin {
       margin-bottom: 10px;
     }
-    .lead{
+
+    .lead {
       text-align: justify;
+    }
+
+    .btn-catalog-close {
+      margin: -.5rem -.5rem -.5rem auto;
+      padding: .5rem .5rem;
+      width: 2em;
+      height: unset;
     }
   </style>
   <link href="./carousel.css" rel="stylesheet">
@@ -109,7 +119,8 @@
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
                     компании</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#promo_modal">Акции</a></li>
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#payship_modal">Оплата и доставка</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#payship_modal">Оплата и
+                    доставка</a></li>
                 <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#business_modal">Бизнес под
                     ключ</a></li>
               </ul>
@@ -155,11 +166,14 @@
 
           <div class="container">
             <div class="carousel-caption text-start">
-              <div class="shadowtext"><h1>Здоровье в каждом глотке</h1>
-              <p>Коралловый кальций обогащает воду минералами, меняет структуру. Нормализует артериальное давление и
-                восстанавливает сердечно-сосудистую систему</p></div>
-              <p><a class="btn btn-lg btn-primary">Читать
-                  далее</a></p>
+              <div class="shadowtext">
+                <h1>Здоровье в каждом глотке</h1>
+                <p>Коралловый кальций обогащает воду минералами, меняет структуру. Нормализует артериальное давление и
+                  восстанавливает сердечно-сосудистую систему</p>
+              </div>
+              <p><button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#catalog_modal">Читать
+                  далее</button></p>
             </div>
           </div>
         </div>
@@ -171,10 +185,10 @@
           <div class="container">
             <div class="carousel-caption text-start">
               <div class="shadowtext">
-              <h1>Новый уровень защиты</h1>
-              <p>Уникальный фитоконцентрат ценных растительных компонентов для повышения защитных сил организма</p>
-            </div>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Читать
+                <h1>Новый уровень защиты</h1>
+                <p>Уникальный фитоконцентрат ценных растительных компонентов для повышения защитных сил организма</p>
+              </div>
+              <p><a class="btn btn-lg btn-primary" href="">Читать
                   далее</a></p>
             </div>
           </div>
@@ -187,10 +201,11 @@
           <div class="container">
             <div class="carousel-caption text-start">
               <div class="shadowtext">
-              <h1>Природа твоей красоты</h1>
-              <p>Новая натуральная коллекция на растительной основе для восстановления эластичности и упругости кожи рук и ног, а также для здоровья волос</p>
+                <h1>Природа твоей красоты</h1>
+                <p>Новая натуральная коллекция на растительной основе для восстановления эластичности и упругости кожи
+                  рук и ног, а также для здоровья волос</p>
               </div>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Читать
+              <p><a class="btn btn-lg btn-primary" href="">Читать
                   далее</a></p>
             </div>
           </div>
@@ -203,11 +218,11 @@
           <div class="container">
             <div class="carousel-caption text-start">
               <div class="shadowtext">
-              <h1>Печень под защитой</h1>
-              <p>Комплекс экстрактов тропических растений и цитрусовых способствует восстановлению клеток печени и
-                защищает их от токсических воздействий</p>
+                <h1>Печень под защитой</h1>
+                <p>Комплекс экстрактов тропических растений и цитрусовых способствует восстановлению клеток печени и
+                  защищает их от токсических воздействий</p>
               </div>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Читать
+              <p><a class="btn btn-lg btn-primary" href="">Читать
                   далее</a></p>
             </div>
           </div>
@@ -268,7 +283,8 @@
             давая
             сбоя в системах.
             У нас нет запчастей, но есть возможность поддерживать здоровье наших органов с помощью данной концепции.</p>
-          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal" data-bs-target="#concept_modal">
+          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal"
+            data-bs-target="#concept_modal">
             Узнать подробнее
           </button>
         </div>
@@ -353,7 +369,8 @@
           <p class="lead">Небольшая часть токсинов выводиться силами внутренних органов, а остальная откладывается в
             тканях, лимфатической системе и органах. Именно поэтому, важно своевременно помогать организму очищаться.
           </p>
-          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal" data-bs-target="#cleansing_modal">
+          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal"
+            data-bs-target="#cleansing_modal">
             Как очистить организм?
           </button>
         </div>
@@ -433,7 +450,8 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Программы здоровья</h2>
           <p class="lead">Нажмите на кнопку и выберите себе подходящую программу</p>
-          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal" data-bs-target="#programs_modal">
+          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal"
+            data-bs-target="#programs_modal">
             Все программы
           </button>
         </div>
@@ -476,7 +494,8 @@
             зачастую сами
             врачи этого не знают. Попадая в окружающую среду, ребенок сталкивается с различного рода микроорганизмами
             (бактерии, вирусы, грибы, паразиты).</p>
-          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal" data-bs-target="#children_modal">
+          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal"
+            data-bs-target="#children_modal">
             Подробнее
           </button>
         </div>
@@ -520,7 +539,8 @@
             веса.
           </p>
           <p class="lead">Принять участие в проекте может любой желающий в возрасте от 15 лет.</p>
-          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal" data-bs-target="#fatlab_modal">
+          <button type="button" class="btn btn-primary btn-margin" data-bs-toggle="modal"
+            data-bs-target="#fatlab_modal">
             Подробности программы
           </button>
         </div>
@@ -758,14 +778,76 @@
       </div>
     </div>
 
+    <div class="modal fade" id="catalog_modal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health"
+                  type="button" role="tab" aria-controls="health" aria-selected="true">Здоровье</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="beauty-tab" data-bs-toggle="tab" data-bs-target="#beauty" type="button"
+                  role="tab" aria-controls="beauty" aria-selected="false">Красота</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition"
+                  type="button" role="tab" aria-controls="nutrition" aria-selected="false">Нутриенты</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="protection-tab" data-bs-toggle="tab" data-bs-target="#protection"
+                  type="button" role="tab" aria-controls="protection" aria-selected="false">Защита</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="house-tab" data-bs-toggle="tab" data-bs-target="#house" type="button"
+                  role="tab" aria-controls="house" aria-selected="false">Дом</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="brands-tab" data-bs-toggle="tab" data-bs-target="#brands" type="button"
+                  role="tab" aria-controls="brands" aria-selected="false">Брендированная продукция</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button"
+                  role="tab" aria-controls="gear" aria-selected="false">Coral Gear</button>
+              </li>
+              <button type="button" class="btn-close btn-catalog-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
+                <div class="album py-5">
+                  <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="health_products">
+                      <script>
+                        generateProducts("#health_products", "ЗДОРОВЬЕ");
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">...</div>
+              <div class="tab-pane fade" id="nutrition" role="tabpanel" aria-labelledby="nutrition-tab">...</div>
+              <div class="tab-pane fade" id="protection" role="tabpanel" aria-labelledby="protection-tab">...</div>
+              <div class="tab-pane fade" id="house" role="tabpanel" aria-labelledby="house-tab">...</div>
+              <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">...</div>
+              <div class="tab-pane fade" id="gear" role="tabpanel" aria-labelledby="gear-tab">...</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="container">
       <p class="float-end"><a href="#">В начало</a></p>
       <p>©2021 Мосенц Лилиана и Coral Club · <a href="" data-bs-toggle="modal"
-        data-bs-target="#contacts_modal">Контакты</a> · <a
-        href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
-        компании</a> · <a
-        href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и ответы</a> · <a
-        href="" data-bs-toggle="modal" data-bs-target="#business_modal">Бизнес под ключ</a></p>
+          data-bs-target="#contacts_modal">Контакты</a> · <a href="" data-bs-toggle="modal"
+          data-bs-target="#company_modal">О
+          компании</a> · <a href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и ответы</a> · <a href=""
+          data-bs-toggle="modal" data-bs-target="#business_modal">Бизнес под ключ</a></p>
     </footer>
   </main>
 
