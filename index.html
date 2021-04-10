@@ -65,6 +65,15 @@
       width: 2em;
       height: unset;
     }
+
+    .catalog-tabs{
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1000;
+      background-color: white;
+    }
   </style>
   <link href="./carousel.css" rel="stylesheet">
   <link href="./scroll.css" rel="stylesheet">
@@ -782,7 +791,7 @@
       <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
           <div class="modal-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs catalog-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health"
                   type="button" role="tab" aria-controls="health" aria-selected="true">Здоровье</button>
