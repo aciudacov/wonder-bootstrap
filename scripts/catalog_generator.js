@@ -5392,5 +5392,28 @@ function generateProducts(container, category){
             $(container).append(toAppendString);
         }
       });
+}
 
+function changeProducts(container, category, select_element){
+    $(container).html("");
+    var subcat = $(select_element).val();
+    if (subcat == "Без категории")
+    {
+        generateProducts(container, category);
+        return;
+    }
+    else
+    products.forEach(element => {
+        if (element.subcategory.includes(subcat))
+        {
+            toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
+            + element.image + "\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
+            + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
+            + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
+            + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
+            + "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Подробнее</button>"
+            + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" onclick=\"window.open('" + element.link + "')\">Узнать цену</button></div></div></div></div></div></div>";
+            $(container).append(toAppendString);
+        }
+    });
 }

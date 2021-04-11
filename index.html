@@ -826,24 +826,24 @@
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#health_products', 'ЗДОРОВЬЕ', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Иммунная поддержка</option>
-                  <option value="2">Гидратация</option>
-                  <option value="3">Энергия</option>
-                  <option value="3">Очищение и детокс</option>
-                  <option value="3">Пищеварение</option>
-                  <option value="3">Смарт фуд</option>
-                  <option value="3">Контроль веса</option>
-                  <option value="3">Сердце и сосуды</option>
-                  <option value="3">Суставы</option>
-                  <option value="3">Зрение</option>
-                  <option value="3">Антистресс</option>
-                  <option value="3">Липосомальные формулы</option>
-                  <option value="3">Детское здоровье</option>
-                  <option value="3">Женское здоровье</option>
-                  <option value="3">Мужское здоровье</option>
-                  <option value="3">Комплексное оздоровление</option>
+                  <option value="ИММУННАЯ ПОДДЕРЖКА">Иммунная поддержка</option>
+                  <option value="ГИДРАТАЦИЯ">Гидратация</option>
+                  <option value="ЭНЕРГИЯ">Энергия</option>
+                  <option value="ОЧИЩЕНИЕ И ДЕТОКС">Очищение и детокс</option>
+                  <option value="ПИЩЕВАРЕНИЕ">Пищеварение</option>
+                  <option value="СМАРТ ФУД">Смарт фуд</option>
+                  <option value="КОНТРОЛЬ ВЕСА">Контроль веса</option>
+                  <option value="СЕРДЦЕ И СОСУДЫ">Сердце и сосуды</option>
+                  <option value="СУСТАВЫ">Суставы</option>
+                  <option value="ЗРЕНИЕ">Зрение</option>
+                  <option value="АНТИСТРЕСС">Антистресс</option>
+                  <option value="ЛИПОСОМАЛЬНЫЕ ФОРМУЛЫ">Липосомальные формулы</option>
+                  <option value="ЗДОРОВЬЕ ДЕТЕЙ">Детское здоровье</option>
+                  <option value="ЖЕНСКОЕ ЗДОРОВЬЕ">Женское здоровье</option>
+                  <option value="МУЖСКОЕ ЗДОРОВЬЕ">Мужское здоровье</option>
+                  <option value="КОМПЛЕКСНОЕ ОЗДОРОВЛЕНИЕ">Комплексное оздоровление</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
@@ -856,12 +856,12 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#beauty_products', 'КРАСОТА', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Для лица</option>
-                  <option value="2">Для тела</option>
-                  <option value="3">Для волос</option>
-                  <option value="4">Антиэйдж</option>
+                  <option value="ДЛЯ ЛИЦА">Для лица</option>
+                  <option value="ДЛЯ ТЕЛА">Для тела</option>
+                  <option value="ДЛЯ ВОЛОС">Для волос</option>
+                  <option value="АНТИЭЙДЖ">Антиэйдж</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
@@ -874,15 +874,15 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="nutrition" role="tabpanel" aria-labelledby="nutrition-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#nutrition_products', 'НУТРИЕНТЫ', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Минералы для воды</option>
-                  <option value="2">Витамины и минералы</option>
-                  <option value="3">ПНЖК и Фосфорлипиды</option>
-                  <option value="4">Пробиотики</option>
-                  <option value="5">Аминокислоты</option>
-                  <option value="6">Фитонутриенты</option>
-                  <option value="7">Протеогликаны</option>
+                  <option value="МИНЕРАЛЫ ДЛЯ ВОДЫ">Минералы для воды</option>
+                  <option value="ВИТАМИНЫ И МИНЕРАЛЫ">Витамины и минералы</option>
+                  <option value="ПНЖК И ФОСФОЛИПИДЫ">ПНЖК и Фосфолипиды</option>
+                  <option value="ПРОБИОТИКИ">Пробиотики</option>
+                  <option value="АМИНОКИСЛОТЫ">Аминокислоты</option>
+                  <option value="ФИТОНУТРИЕНТЫ">Фитонутриенты</option>
+                  <option value="ПРОТЕОГЛИКАНЫ">Протеогликаны</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
@@ -906,11 +906,11 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="house" role="tabpanel" aria-labelledby="house-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#house_products', 'ДОМ', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Alive для уборки</option>
-                  <option value="2">Alive для мытья посуды</option>
-                  <option value="3">Alive для стирки</option>
+                  <option value="ALIVE ДЛЯ УБОРКИ">Alive для уборки</option>
+                  <option value="ALIVE ДЛЯ МЫТЬЯ ПОСУДЫ">Alive для мытья посуды</option>
+                  <option value="ALIVE ДЛЯ СТИРКИ">Alive для стирки</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
@@ -923,13 +923,13 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#brands_products', 'БРЕНДЫ', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Oda Naturals</option>
-                  <option value="2">Privilege</option>
-                  <option value="3">Alive</option>
-                  <option value="3">Daily Delicious</option>
-                  <option value="3">Pure & Natural</option>
+                  <option value="ODA NATURALS">Oda Naturals</option>
+                  <option value="PRIVILEGE">Privilege</option>
+                  <option value="ALIVE">Alive</option>
+                  <option value="DAILY DELICIOUS">Daily Delicious</option>
+                  <option value="PURE & NATURAL">Pure & Natural</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
@@ -942,12 +942,12 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="gear" role="tabpanel" aria-labelledby="gear-tab">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" onchange="changeProducts('#gear_products', 'CORAL GEAR', this)">
                   <option selected>Без категории</option>
-                  <option value="1">Товары для дома</option>
-                  <option value="2">Товары для спорта</option>
-                  <option value="3">Товары для путешествий</option>
-                  <option value="4">Товары для бизнеса</option>
+                  <option value="ТОВАРЫ ДЛЯ ДОМА">Товары для дома</option>
+                  <option value="ТОВАРЫ ДЛЯ СПОРТА">Товары для спорта</option>
+                  <option value="ТОВАРЫ ДЛЯ ПУТЕШЕСТВИЙ">Товары для путешествий</option>
+                  <option value="ТОВАРЫ ДЛЯ БИЗНЕСА">Товары для бизнеса</option>
                 </select>
                 <div class="album py-5">
                   <div class="container">
