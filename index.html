@@ -74,6 +74,7 @@
       z-index: 1000;
       background-color: white;
     }
+
   </style>
   <link href="./carousel.css" rel="stylesheet">
   <link href="./scroll.css" rel="stylesheet">
@@ -825,6 +826,25 @@
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Иммунная поддержка</option>
+                  <option value="2">Гидратация</option>
+                  <option value="3">Энергия</option>
+                  <option value="3">Очищение и детокс</option>
+                  <option value="3">Пищеварение</option>
+                  <option value="3">Смарт фуд</option>
+                  <option value="3">Контроль веса</option>
+                  <option value="3">Сердце и сосуды</option>
+                  <option value="3">Суставы</option>
+                  <option value="3">Зрение</option>
+                  <option value="3">Антистресс</option>
+                  <option value="3">Липосомальные формулы</option>
+                  <option value="3">Детское здоровье</option>
+                  <option value="3">Женское здоровье</option>
+                  <option value="3">Мужское здоровье</option>
+                  <option value="3">Комплексное оздоровление</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="health_products">
@@ -836,6 +856,13 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Для лица</option>
+                  <option value="2">Для тела</option>
+                  <option value="3">Для волос</option>
+                  <option value="4">Антиэйдж</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="beauty_products">
@@ -847,6 +874,16 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="nutrition" role="tabpanel" aria-labelledby="nutrition-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Минералы для воды</option>
+                  <option value="2">Витамины и минералы</option>
+                  <option value="3">ПНЖК и Фосфорлипиды</option>
+                  <option value="4">Пробиотики</option>
+                  <option value="5">Аминокислоты</option>
+                  <option value="6">Фитонутриенты</option>
+                  <option value="7">Протеогликаны</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="nutrition_products">
@@ -869,6 +906,12 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="house" role="tabpanel" aria-labelledby="house-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Alive для уборки</option>
+                  <option value="2">Alive для мытья посуды</option>
+                  <option value="3">Alive для стирки</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="house_products">
@@ -880,6 +923,14 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Oda Naturals</option>
+                  <option value="2">Privilege</option>
+                  <option value="3">Alive</option>
+                  <option value="3">Daily Delicious</option>
+                  <option value="3">Pure & Natural</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="brands_products">
@@ -891,6 +942,13 @@
                 </div>
               </div>
               <div class="tab-pane fade" id="gear" role="tabpanel" aria-labelledby="gear-tab">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Без категории</option>
+                  <option value="1">Товары для дома</option>
+                  <option value="2">Товары для спорта</option>
+                  <option value="3">Товары для путешествий</option>
+                  <option value="4">Товары для бизнеса</option>
+                </select>
                 <div class="album py-5">
                   <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="gear_products">
@@ -903,6 +961,14 @@
               </div>
             </div>
           </div>
+          <script>
+            $(function () {
+              var modal = document.getElementById('catalog_modal');
+              modal.addEventListener('shown.bs.modal', function (event){
+                $("#myTabContent").find("select").css("margin-top", ($("#myTab").height()) + "px");
+              });
+            });
+          </script>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
           </div>
