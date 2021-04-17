@@ -135,18 +135,9 @@
                     ключ</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
-                aria-expanded="false">Продукты Coral Club</a>
-              <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                <li><a class="dropdown-item" href="#">Здоровье</a></li>
-                <li><a class="dropdown-item" href="#">Красота</a></li>
-                <li><a class="dropdown-item" href="#">Дом</a></li>
-                <li><a class="dropdown-item" href="#packs">Наборы</a></li>
-                <li><a class="dropdown-item" href="#">Нутриенты</a></li>
-                <li><a class="dropdown-item" href="#">Защита</a></li>
-                <li><a class="dropdown-item" href="#">Брендированная продукция</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="" data-bs-toggle="modal"
+              data-bs-target="#catalog_modal">Продукты Coral Club</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="http://coral.club" target="_blank">Официальный сайт</a>
@@ -962,11 +953,28 @@
             </div>
           </div>
           <script>
-            $(function () {
+            $(function ()
+            {
               var modal = document.getElementById('catalog_modal');
-              modal.addEventListener('shown.bs.modal', function (event){
+              modal.addEventListener('shown.bs.modal', function (event)
+              {
                 $("#myTabContent").find("select").css("margin-top", ($("#myTab").height()) + "px");
               });
+              setTimeout(function()
+              {
+                var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                tooltips.forEach(element => {
+                  var prod_id = element.dataset.product;
+                  var img = products.find(el => el.id == prod_id).image;
+                  console.log(img);
+                  element.setAttribute("title", "<img src='" + img + "' width=180px>");
+                });
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl)
+                {
+                  return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+              }, 1000);
             });
           </script>
           <div class="modal-footer">
