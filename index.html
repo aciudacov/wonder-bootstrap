@@ -75,6 +75,9 @@
       background-color: white;
     }
 
+    .popwidth{
+      max-width: 400px;
+    }
   </style>
   <link href="./carousel.css" rel="stylesheet">
   <link href="./scroll.css" rel="stylesheet">
@@ -973,6 +976,7 @@
                 {
                   return new bootstrap.Tooltip(tooltipTriggerEl);
                 });
+                enablePopovers();
               }, 1000);
             });
           </script>

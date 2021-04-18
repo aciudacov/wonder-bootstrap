@@ -5557,8 +5557,9 @@ function generateProducts(container, category) {
                 + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
                 + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                 + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
-                + "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Подробнее</button>"
-                + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" onclick=\"window.open('" + element.link + "')\">Узнать цену</button></div></div></div></div></div></div>";
+                + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-custom-class=\"popwidth\" data-bs-toggle=\"popover\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\""
+                + element.desc + "\">Подробнее</a>"
+                + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
             $(container).append(toAppendString);
         }
     });
@@ -5569,9 +5570,11 @@ function changeProducts(container, category, select_element) {
     var subcat = $(select_element).val();
     if (subcat == "Без категории") {
         generateProducts(container, category);
+        enablePopovers();
         return;
     }
     else
+    {
         products.forEach(element => {
             if (element.subcategory.includes(subcat)) {
                 toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
@@ -5579,9 +5582,18 @@ function changeProducts(container, category, select_element) {
                     + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
                     + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                     + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
-                    + "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Подробнее</button>"
-                    + "<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" onclick=\"window.open('" + element.link + "')\">Узнать цену</button></div></div></div></div></div></div>";
+                    + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-toggle=\"popover\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\"" + element.desc + "\">Подробнее</a>"
+                    + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
                 $(container).append(toAppendString);
             }
         });
+        enablePopovers();
+    }
+}
+
+function enablePopovers(){
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+    });
 }
