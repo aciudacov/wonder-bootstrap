@@ -966,7 +966,6 @@
                 tooltips.forEach(element => {
                   var prod_id = element.dataset.product;
                   var img = products.find(el => el.id == prod_id).image;
-                  console.log(img);
                   element.setAttribute("title", "<img src='" + img + "' width=180px>");
                 });
                 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
