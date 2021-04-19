@@ -789,31 +789,31 @@
             <ul class="nav nav-tabs catalog-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health"
-                  type="button" role="tab" aria-controls="health" aria-selected="true">Здоровье</button>
+                  type="button" role="tab" aria-controls="health" aria-selected="true" value="ЗДОРОВЬЕ">Здоровье</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="beauty-tab" data-bs-toggle="tab" data-bs-target="#beauty" type="button"
-                  role="tab" aria-controls="beauty" aria-selected="false">Красота</button>
+                  role="tab" aria-controls="beauty" aria-selected="false" value="КРАСОТА">Красота</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition"
-                  type="button" role="tab" aria-controls="nutrition" aria-selected="false">Нутриенты</button>
+                  type="button" role="tab" aria-controls="nutrition" aria-selected="false" value="НУТРИЕНТЫ">Нутриенты</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="protection-tab" data-bs-toggle="tab" data-bs-target="#protection"
-                  type="button" role="tab" aria-controls="protection" aria-selected="false">Защита</button>
+                  type="button" role="tab" aria-controls="protection" aria-selected="false" value="ЗАЩИТА">Защита</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="house-tab" data-bs-toggle="tab" data-bs-target="#house" type="button"
-                  role="tab" aria-controls="house" aria-selected="false">Дом</button>
+                  role="tab" aria-controls="house" aria-selected="false" value="ДОМ">Дом</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="brands-tab" data-bs-toggle="tab" data-bs-target="#brands" type="button"
-                  role="tab" aria-controls="brands" aria-selected="false">Брендированная продукция</button>
+                  role="tab" aria-controls="brands" aria-selected="false" value="БРЕНДЫ">Брендированная продукция</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button"
-                  role="tab" aria-controls="gear" aria-selected="false">Coral Gear</button>
+                  role="tab" aria-controls="gear" aria-selected="false" value="CORAL GEAR">Coral Gear</button>
               </li>
               <button type="button" class="btn-close btn-catalog-close" data-bs-dismiss="modal"
                 aria-label="Close"></button>
@@ -968,8 +968,12 @@
                 var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
                 tooltips.forEach(element => {
                   var prod_id = element.dataset.product;
-                  var img = products.find(el => el.id == prod_id).image;
+                  var prod = products.find(el => el.id == prod_id);
+                  var img = prod.image;
                   element.setAttribute("title", "<img src='" + img + "' width=180px>");
+                  element.setAttribute("onclick", "focusElement(" + prod_id + ")");
+                  element.setAttribute("href", "javascript:void(0);");
+                  $(element).wrap("<span data-bs-target=\"#catalog_modal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\"></span>");
                 });
                 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
                 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl)

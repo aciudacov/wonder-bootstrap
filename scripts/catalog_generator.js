@@ -5557,7 +5557,7 @@ function generateProducts(container, category) {
                 + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
                 + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                 + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
-                + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-custom-class=\"popwidth\" data-bs-toggle=\"popover\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\""
+                + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-custom-class=\"popwidth\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\""
                 + element.desc + "\">Подробнее</a>"
                 + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
             $(container).append(toAppendString);
@@ -5582,7 +5582,7 @@ function changeProducts(container, category, select_element) {
                     + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
                     + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                     + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
-                    + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-toggle=\"popover\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\"" + element.desc + "\">Подробнее</a>"
+                    + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\"" + element.desc + "\">Подробнее</a>"
                     + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
                 $(container).append(toAppendString);
             }
@@ -5596,4 +5596,14 @@ function enablePopovers(){
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
     });
+}
+
+function focusElement(product_id){
+    var prod = products.find(el => el.id == product_id);
+    var tabs = $(".catalog-tabs");
+    var box = document.getElementById("product"+product_id);
+    setTimeout(function(){
+        box.scrollIntoView({block: "center", behavior: "smooth"});
+    }, 1000);
+    
 }
