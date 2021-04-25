@@ -4341,11 +4341,25 @@ function focusElement(product_id){
     var tabs = $(".catalog-tabs");
     var box = document.getElementById("product"+product_id);
     setTimeout(function(){
+       switchTab(prod.category[0]);
         box.scrollIntoView({block: "center", behavior: "smooth"});
     }, 1000);
 }
 
 function scrollCatalog(){
-    var box = document.getElementById(topProductId);
-        box.scrollIntoView({block: "center", behavior: "smooth"});
+    var tabs = document.getElementsByClassName('tab-pane fade show active')[0];
+    var scrollOjb = tabs.getElementsByClassName('col')[0];
+    var id = scrollOjb.getAttribute("id");
+    var box = document.getElementById(id);
+    box.scrollIntoView({block: "center", behavior: "smooth"}); 
+}
+
+function switchTab(tab_name){
+    var tabs = document.getElementById('myTab');
+    var buttons = Array.prototype.slice.call(tabs.getElementsByTagName("BUTTON"));
+    var targetTab = buttons.find(el => el.getAttribute("value") == tab_name);
+    console.log(tab_name);
+    var someTabTriggerEl = document.querySelector('#'+targetTab.getAttribute("id"));
+    var tab = new bootstrap.Tab(someTabTriggerEl);
+    tab.show();
 }
