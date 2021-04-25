@@ -2528,27 +2528,7 @@ var products = [
     },
     {
         name: "ФитоМикс для женщин (30 капсул)",
-        desc: "Уменьшает проявления физического и эмоционального дискомфорта в период пред- и постменопаузы у женщин. Фитоэстрогены, содержащиеся в экстракте шишек хмеля и семянах льна, в сочетании с экстрактом шафрана и бета-аланином помогают справиться с нервной возбудимостью и нормализовать сон.\n" +
-            "\n" +
-            "БЕТА-АЛАНИН\n" +
-            "\n" +
-            "«Женская» аминокислота. Облегчает состояние при менопаузе (уменьшает приливы, жар, потливость), незаменима в сочетании с фитоэстрогенами.\n" +
-            "\n" +
-            "ЭКСТРАКТ ШИШЕК ХМЕЛЯ\n" +
-            "\n" +
-            "Успокаивающе действует на ЦНС, уменьшает раздражительность, головную боль, улучшает настроение и сон. Благодаря фитоэстрогенам деликатно корректирует менструальный цикл и половую активность, способствует синтезу женских гормонов.\n" +
-            "\n" +
-            "ЭКСТРАКТ СЕМЯН ЛЬНА\n" +
-            "\n" +
-            "Богатый источник лигнанов, обладающих гормоноподобной активностью, компенсирует недостаток женских гормонов в организме, поддерживает здоровье молочных желез.\n" +
-            "\n" +
-            "ЭКСТРАКТ ТРАВЫ ШАФРАНА\n" +
-            "\n" +
-            "Содержит кроцин и сафранал – уникальные антиоксиданты и антистрессовые компоненты, улучшающие эмоциональный фон.\n" +
-            "\n" +
-            "СПОСОБ ПРИМЕНЕНИЯ\n" +
-            "\n" +
-            "Взрослым – по 1- 3 капсуле в день во время еды.",
+        desc: "Уменьшает проявления физического и эмоционального дискомфорта в период пред- и постменопаузы у женщин. Фитоэстрогены, содержащиеся в экстракте шишек хмеля и семянах льна, в сочетании с экстрактом шафрана и бета-аланином помогают справиться с нервной возбудимостью и нормализовать сон.",
         id: "2110",
         category: ["ЗДОРОВЬЕ", "НУТРИЕНТЫ"],
         subcategory: ["ЖЕНСКОЕ ЗДОРОВЬЕ", "ФИТОНУТРИЕНТЫ"],
@@ -4301,9 +4281,13 @@ var products = [
     }
 ]
 
+var topProductId;
+
 function generateProducts(container, category) {
     products.forEach(element => {
         if (element.category.includes(category)) {
+            if (topProductId === undefined)
+                topProductId = "product" + element.id;
             toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
                 + element.image + "\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
                 + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
@@ -4329,6 +4313,8 @@ function changeProducts(container, category, select_element) {
     {
         products.forEach(element => {
             if (element.subcategory.includes(subcat)) {
+                if (topProductId === undefined)
+                topProductId = "product" + element.id;
                 toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
                     + element.image + "\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
                     + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
@@ -4357,5 +4343,9 @@ function focusElement(product_id){
     setTimeout(function(){
         box.scrollIntoView({block: "center", behavior: "smooth"});
     }, 1000);
-    
+}
+
+function scrollCatalog(){
+    var box = document.getElementById(topProductId);
+        box.scrollIntoView({block: "center", behavior: "smooth"});
 }
