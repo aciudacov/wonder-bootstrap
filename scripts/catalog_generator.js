@@ -4358,7 +4358,6 @@ function switchTab(tab_name){
     var tabs = document.getElementById('myTab');
     var buttons = Array.prototype.slice.call(tabs.getElementsByTagName("BUTTON"));
     var targetTab = buttons.find(el => el.getAttribute("value") == tab_name);
-    console.log(tab_name);
     var someTabTriggerEl = document.querySelector('#'+targetTab.getAttribute("id"));
     var tab = new bootstrap.Tab(someTabTriggerEl);
     tab.show();
