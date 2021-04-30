@@ -4288,9 +4288,9 @@ function generateProducts(container, category) {
         if (element.category.includes(category)) {
             if (topProductId === undefined)
                 topProductId = "product" + element.id;
-            toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
+            toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><a href=\"" + element.link + "\" target=\"_blank\"><img src=\""
                 + element.image + "\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
-                + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
+                + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"></a>"
                 + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                 + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
                 + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-custom-class=\"popwidth\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\""
@@ -4315,9 +4315,9 @@ function changeProducts(container, category, select_element) {
             if (element.subcategory.includes(subcat)) {
                 if (topProductId === undefined)
                 topProductId = "product" + element.id;
-                toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><img src=\""
+                toAppendString = "<div class=\"col\" id=\"product" + element.id + "\"><div class=\"card shadow-sm\"><a href=\"" + element.link + "\" target=\"_blank\"><img src=\""
                     + element.image + "\" class='bg-placeholder-img card-img-top' width=\"auto\" height=\"auto\""
-                    + "role=\"img\" aria-label=\"Quiz thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\">"
+                    + "role=\"img\" aria-label=\"Product thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"></a>"
                     + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                     + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
                     + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\"" + element.desc + "\">Подробнее</a>"
