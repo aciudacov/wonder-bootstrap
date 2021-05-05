@@ -4150,7 +4150,10 @@ function generateProducts(container, category) {
                 + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
                 + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-custom-class=\"popwidth\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\""
                 + element.desc + "\">Подробнее</a>"
-                + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
+                + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a>";
+                if (element.prez != "")
+                    toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.prez + "\" target=\"_blank\">Презентация</a>";
+                toAppendString += "</div></div></div></div></div></div>";
             $(container).append(toAppendString);
         }
     });
@@ -4176,7 +4179,10 @@ function changeProducts(container, category, select_element) {
                     + "<div class=\"card-body\"><p class=\"card-text\">" + element.name
                     + "</p><div class=\"d-flex justify-content-between align-items-center\"><div class=\"btn-group\">"
                     + "<div class=\"btn-group\"><a tabindex=\"0\" class=\"btn btn-sm btn-outline-secondary\" role=\"button\" data-bs-toggle=\"popover\" data-bs-placement=\"top\" data-bs-trigger=\"focus\" title=\"Информация\" data-bs-content=\"" + element.desc + "\">Подробнее</a>"
-                    + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a></div></div></div></div></div></div>";
+                    + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a>";
+                    if (element.prez != "")
+                        toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.prez + "\" target=\"_blank\">Презентация</a>";
+                    toAppendString += "</div></div></div></div></div></div>";
                 $(container).append(toAppendString);
             }
         });
