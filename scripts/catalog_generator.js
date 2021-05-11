@@ -934,7 +934,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/2593-lipostik-fit-kurs-na-mesyac.jpg",
         link: "https://ru.coral.club/shop/lipostick-fit.html?offer=216904",
         certif: "",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=8leLHFQ3msg"
     },
     {
         name: "Ca-Mg Комплекс (90 таблеток)",
@@ -1826,16 +1827,15 @@ var products = [
             "\n" +
             "Подходит практически для любых поверхностей.\n" +
             "Для мытья и обезжиривания различных поверхностей в доме, на даче, автомобиле. Смывает пыль, грязь, жир и налёт.\n" +
-            "Антистатический эффект и приятный цитрусовый аромат.\n" +
-            "\n" +
-            "ПРИМЕНЕНИЕ\n",
+            "Антистатический эффект и приятный цитрусовый аромат.\n",
         id: "81201",
         category: ["БРЕНДЫ", "ДОМ"],
         subcategory: ["ALIVE", "ALIVE ДЛЯ УБОРКИ"],
         image: "https://incoral.com/src/new/product/shop/81201-alive-a-universalnoe-chistyaschee-sredstvo-500-ml.jpg",
         link: "https://ru.coral.club/shop/alive-a-all-purpose-cleaner-.html?offer=81201",
         certif: "https://incoral.com/doc/materials/alive-a-ru.pdf",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=yQ9_-o9bg90"
     },
     {
         name: "Alive B Средство для ванной комнаты и туалета (500 мл)",
@@ -1848,7 +1848,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/81202-alive-b-sredstvo-dlya-vannoy-komnaty-i-tualeta-500-ml.jpg",
         link: "https://ru.coral.club/shop/alive-b-bathroom-toilet-cleaner.html?offer=81202",
         certif: "https://incoral.com/doc/materials/alive-b-ru.pdf",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=s8sb4eEPcF8"
     },
     {
         name: "Alive D Гипоаллергенная жидкость для мытья посуды (946 мл)",
@@ -1876,7 +1877,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/81203-alive-f-sredstvo-dlya-polov-i-plitki-500-ml.jpg",
         link: "https://ru.coral.club/shop/alive-f-sredstvo-dlya-polov-i-plitki.html?offer=81203",
         certif: "https://incoral.com/doc/materials/alive-f-ru.pdf",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=s8sb4eEPcF8"
     },
     {
         name: "Alive G Средство для стекол и зеркал (500 мл)",
@@ -1889,7 +1891,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/81204-alive-g-sredstvo-dlya-stekol-i-zerkal-500-ml.jpg",
         link: "https://ru.coral.club/shop/alive-g-glass-mirror-cleaner-.html?offer=81204",
         certif: "https://incoral.com/doc/materials/alive-g-ru.pdf",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=s8sb4eEPcF8"
     },
     {
         name: "Alive K Средство для удаления жира на кухне (500 мл)",
@@ -1906,7 +1909,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/81205-alive-k-sredstvo-dlya-udaleniya-zhira-na-kuhne-500-ml.jpg",
         link: "https://ru.coral.club/shop/alive-k-kitchen-cleaner.html?offer=81205",
         certif: "https://incoral.com/doc/materials/alive-k-ru.pdf",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=s8sb4eEPcF8"
     },
     {
         name: "Alive Коллекция средств для поверхностей",
@@ -1937,7 +1941,8 @@ var products = [
         image: "https://incoral.com/src/new/product/shop/73-alive-kollekciya-sredstv-dlya-poverhnostey.jpg",
         link: "https://ru.coral.club/shop/alive-assorted-household-cleaning-products.html?offer=812102",
         certif: "",
-        prez: ""
+        prez: "",
+        video: "https://www.youtube.com/watch?v=yQ9_-o9bg90"
     },
     {
         name: "Alive Концентрированное средство для отбеливания и удаления стойких загрязнений (1130 г)",
@@ -2490,6 +2495,8 @@ function generateProducts(container, category) {
                 + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a>";
                 if (element.prez != "")
                     toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.prez + "\" target=\"_blank\">Презентация</a>";
+                else if (element.video)
+                    toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.video + "\" target=\"_blank\">Применение</a>";
                 toAppendString += "</div></div></div></div></div></div>";
             $(container).append(toAppendString);
         }
@@ -2519,6 +2526,8 @@ function changeProducts(container, category, select_element) {
                     + "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.link + "\" target=\"_blank\">Узнать цену</a>";
                     if (element.prez != "")
                         toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.prez + "\" target=\"_blank\">Презентация</a>";
+                    else if (element.video)
+                        toAppendString += "<a class=\"btn btn-sm btn-outline-secondary\" href=\"" + element.video + "\" target=\"_blank\">Применение</a>";
                     toAppendString += "</div></div></div></div></div></div>";
                 $(container).append(toAppendString);
             }
