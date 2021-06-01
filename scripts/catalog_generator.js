@@ -2544,6 +2544,7 @@ function enablePopovers(){
 }
 
 function focusElement(product_id){
+    disableScroll();
     var prod = products.find(el => el.id == product_id);
     var tabs = $(".catalog-tabs");
     var box = document.getElementById("product"+product_id);
@@ -2551,6 +2552,9 @@ function focusElement(product_id){
        switchTab(prod.category[0]);
         box.scrollIntoView({block: "center", behavior: "smooth"});
     }, 1000);
+    setTimeout(function(){
+        enableScroll();
+    }, 2500);
 }
 
 function scrollCatalog(){
@@ -2568,4 +2572,44 @@ function switchTab(tab_name){
     var someTabTriggerEl = document.querySelector('#'+targetTab.getAttribute("id"));
     var tab = new bootstrap.Tab(someTabTriggerEl);
     tab.show();
+}
+
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
