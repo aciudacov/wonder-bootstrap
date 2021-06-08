@@ -65,8 +65,7 @@ body {
   }
   .carousel-item > img{
     height: 40vh;
-    object-fit: none;
-    object-position: 100% 25%;
+    object-fit: fill;
   }
   .btn-lg{
     font-size: 0.8rem;
