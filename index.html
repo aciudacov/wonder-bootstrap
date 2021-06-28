@@ -986,6 +986,7 @@
             $(function () {
               var modal = document.getElementById('catalog_modal');
               modal.addEventListener('shown.bs.modal', function (event) {
+                history.pushState('', 'Coral Club Moldova', '#catalog');
                 $("#myTabContent").find("select").css("margin-top", ($("#myTab").height()) + "px");
               });
               setTimeout(function () {
@@ -1007,6 +1008,17 @@
                 });
                 enablePopovers();
               }, 1000);
+            });
+            window.addEventListener('popstate', function (event) {
+              var modal = document.getElementById('catalog_modal');
+              var actualModal = bootstrap.Modal.getInstance(modal);
+              var currentURL = window.location.href;
+              var anchor = currentURL.split('#')[1];
+              if (anchor != '#catalog' && actualModal){
+                actualModal.hide();
+              }
+              else if (anchor == "#catalog" && actualModal)
+                actualModal.show();
             });
           </script>
           <div class="modal-footer">
