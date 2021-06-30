@@ -2554,7 +2554,7 @@ function focusElement(product_id){
     }, 1000);
     setTimeout(function(){
         enableScroll();
-    }, 2500);
+    }, 2000);
 }
 
 function scrollCatalog(){
