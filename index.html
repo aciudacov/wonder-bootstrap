@@ -259,17 +259,24 @@
 
     <div class="container marketing" id="tests">
       <br>
-      <br>
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Тесты здоровья</h1>
-          <p class="lead text-muted">Ниже вы можете выбрать и пройти любой интересующий вас тест и получить рекомендации
-            основываясь на ваших результатах</p>
-        </div>
-      </section>
       <!-- Start of album cards-->
-      <div class="album py-5">
-        <div class="container">
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Тесты здоровья</h2>
+          <p class="lead">Ниже вы можете выбрать и пройти любой интересующий вас тест и получить рекомендации
+            основываясь на ваших результатах</p>
+          <button class="btn btn-primary btn-margin" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
+            Отобразить тесты
+          </button>
+        </div>
+        <div class="col-md-5">
+          <img src="img/sections/tests.jpg"
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+            role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+        </div>
+      </div>
+      <div class="album py-5" id="testContainer">
+        <div class="container collapse" id="collapsible">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="quiz_container">
             <script>
               $(function () {
