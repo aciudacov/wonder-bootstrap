@@ -265,7 +265,7 @@
           <h2 class="featurette-heading">Тесты здоровья</h2>
           <p class="lead">Ниже вы можете выбрать и пройти любой интересующий вас тест и получить рекомендации
             основываясь на ваших результатах</p>
-          <button class="btn btn-primary btn-margin" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
             Отобразить тесты
           </button>
         </div>
@@ -284,8 +284,16 @@
                   generateQuizes();
                 });
               });
+              var myCollapsible = document.getElementById('collapsible')
+              myCollapsible.addEventListener('hide.bs.collapse', function () {
+                document.getElementById('section07').scrollIntoView();
+              });
             </script>
           </div>
+          <br>
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
+            Скрыть тесты
+          </button>
         </div>
       </div>
       <!-- End of album cards-->
