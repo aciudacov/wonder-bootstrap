@@ -98,12 +98,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" aria-label="Fifth navbar example">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Coral Club<small>Сайт дистрибьютора</small><small>Лилианы Мосенц</small></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05"
-          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContainer"
+          aria-controls="navbarContainer" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse" id="navbarsExample05">
+        <div class="navbar-collapse collapse" id="navbarContainer">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#tests">Тест здоровья</a>
@@ -164,7 +164,14 @@
       </div>
     </nav>
   </header>
-
+  <script>
+    const navLinks = document.querySelectorAll('.nav-item:not(.dropdown')
+    const menuToggle = document.getElementById('navbarContainer')
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:false})
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => { bsCollapse.toggle() })
+    })
+  </script>
   <main>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
