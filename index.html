@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TCM6TH7');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TCM6TH7');
+  </script>
   <!-- End Google Tag Manager -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -25,7 +36,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
   </script>
-  <link href="./loader.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
   </script>
@@ -34,104 +44,63 @@
   <script src="scripts/catalog_generator.js"></script>
   <link href="./carousel.css" rel="stylesheet">
   <link href="./scroll.css" rel="stylesheet">
-</head>
+  <link href="./menu.css" rel="stylesheet">
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCM6TH7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCM6TH7" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div class="loader-wrap">
-  <div class="sk-chase">
-    <div class="sk-chase-dot"></div>
-    <div class="sk-chase-dot"></div>
-    <div class="sk-chase-dot"></div>
-    <div class="sk-chase-dot"></div>
-    <div class="sk-chase-dot"></div>
-    <div class="sk-chase-dot"></div>
-  </div>
-</div>
-<script>
-  $(document).ready(function() {
-  //Preloader
-  preloaderFadeOutTime = 500;
-  function hidePreloader() {
-  var preloader = $('.loader-wrap');
-  preloader.fadeOut(preloaderFadeOutTime);
-  }
-  hidePreloader();
-  });
+  <input type="checkbox" id="menu"/>
+  <label for="menu" class="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  
+  <nav class="navi">
+    <ul>
+      <li><a class="nav-link" aria-current="page" href="#tests">Тест здоровья</a></li>
+      <li><a class="nav-link" aria-current="page" href="#concept">5 шагов к здоровью</a></li>
+      <li><a class="nav-link" aria-current="page" href="#water">Живая вода</a></li>
+      <li><a class="nav-link" aria-current="page" href="#cleansing">Очищение организма</a></li>
+      <li><a class="nav-link" aria-current="page" href="#cells">Клеточное питание</a></li>
+      <li><a class="nav-link" aria-current="page" href="#programs">Программы здоровья</a></li>
+      <li><a class="nav-link" aria-current="page" href="#children">Детское здоровье</a></li>
+      <li><a class="nav-link" aria-current="page" href="#fatlab">Снижение веса</a></li>
+      <li><a class="nav-link" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#contacts_modal">Бесплатная консультация</a></li>
+      <li><a class="dropdown-item" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и
+        ответы</a></li>
+    <li><a class="dropdown-item" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
+        компании</a></li>
+    <li><a class="dropdown-item" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#promo_modal">Акции</a></li>
+    <li><a class="dropdown-item" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#payship_modal">Оплата и
+        доставка</a></li>
+    <li><a class="dropdown-item" onclick="closeMenu()" href="" data-bs-toggle="modal" data-bs-target="#business_modal"><b>Бизнес
+          под
+          ключ</b></a></li>
+          <li>
+            <a class="nav-link" onclick="closeMenu()" aria-current="page" href="" data-bs-toggle="modal"
+              data-bs-target="#catalog_modal">Продукты</a>
+          </li>
+          <li>
+            <a class="nav-link" aria-current="page" href="https://md.coral.club/registration/?REF_CODE=713267945567" target="_blank">Регистрация</a>
+          </li>
+          <li>
+            <a class="nav-link" aria-current="page" href="http://ru.coral.club" target="_blank">Официальный сайт</a>
+          </li>
+    </ul>
+  </nav>
+
+  <script>
+    var menu = document.getElementById("menu");
+    function closeMenu()
+    {
+      if (menu.checked)
+        menu.checked = false;
+    }
   </script>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Fifth navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Coral Club<small>Сайт дистрибьютора</small><small>Лилианы Мосенц</small></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContainer"
-          aria-controls="navbarContainer" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse" id="navbarContainer">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#tests">Тест здоровья</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#concept">5 шагов к здоровью</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#water">Живая вода</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#cleansing">Очищение организма</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#cells">Клеточное питание</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#programs">Программы здоровья</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#children">Детское здоровье</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#fatlab">Снижение веса</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
-                aria-expanded="false"><b>Инфо и контакты</b></a>
-              <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal"
-                    data-bs-target="#contacts_modal"><b>Бесплатная консультация</b></a></li>
-                <!--li><a class="dropdown-item" href="#reviews">Отзывы</a></li-->
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#qa_modal">Вопросы и
-                    ответы</a></li>
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#company_modal">О
-                    компании</a></li>
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#promo_modal">Акции</a></li>
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#payship_modal">Оплата и
-                    доставка</a></li>
-                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#business_modal"><b>Бизнес
-                      под
-                      ключ</b></a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="" data-bs-toggle="modal"
-                data-bs-target="#catalog_modal">Продукты</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="https://md.coral.club/registration/index.php?language=ru&REF_CODE=713267945567" target="_blank">Регистрация</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="http://ru.coral.club" target="_blank">Официальный сайт</a>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-  </header>
   <main>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -232,7 +201,8 @@
           <h2 class="featurette-heading">Тесты здоровья</h2>
           <p class="lead">Ниже вы можете выбрать и пройти любой интересующий вас тест и получить рекомендации
             основываясь на ваших результатах</p>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible"
+            aria-expanded="false" aria-controls="collapsible">
             Отобразить тесты
           </button>
         </div>
@@ -261,7 +231,8 @@
             </script>
           </div>
           <br>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible" aria-expanded="false" aria-controls="collapsible">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible"
+            aria-expanded="false" aria-controls="collapsible">
             Скрыть тесты
           </button>
         </div>
@@ -590,7 +561,8 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Результаты</h2>
           <p class="lead">Люди, которые прошли программы здоровья, делятся своими результатами.</p>
-          <p class="lead">Увидеть результаты вы можете в моем телеграм-канале, где также есть много полезной информации о здоровье.</p>
+          <p class="lead">Увидеть результаты вы можете в моем телеграм-канале, где также есть много полезной информации
+            о здоровье.</p>
           <a class="btn btn-primary btn-margin" href="https://t.me/lilianamosent" target="_blank">
             Смотреть в телеграм-канале
           </a>
@@ -674,370 +646,372 @@
 
     </div>
 
-    <!--Here are rest of the modals-->
-    <div class="modal fade" id="qa_modal" tabindex="-1" aria-labelledby="qaModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="qaModalLabel">Вопросы и ответы</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="qa_body">
-            <script>
-              $(function () {
-                $.getScript('./scripts/qa_generator.js', function () {
-                  generateQA();
+<!--Here are rest of the modals-->
+<div class="modal fade" id="qa_modal" tabindex="-1" aria-labelledby="qaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="qaModalLabel">Вопросы и ответы</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="qa_body">
+        <script>
+          $(function () {
+            $.getScript('./scripts/qa_generator.js', function () {
+              generateQA();
+            });
+          });
+        </script>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="contacts_modal" tabindex="-1" aria-labelledby="contactsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactsModalLabel">Контакты</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="contacts_body">
+        <script>
+          $(function () {
+            $("#contacts_body").load("./modals/contacts_modal_content.html");
+          });
+        </script>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="company_modal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="companyModalLabel">О компании</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="company_body">
+        <script>
+          $(function () {
+            $("#company_body").load("./modals/company_modal_content.html");
+          });
+        </script>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="business_modal" tabindex="-1" aria-labelledby="businessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="businessModalLabel">Бизнес под ключ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="business_body">
+        <script>
+          $(function () {
+            $("#business_body").load("./modals/business_modal_content.html");
+          });
+        </script>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="promo_modal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="promoModalLabel">Акции</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="promo_body">
+        <div class="album py-5">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="promo_container">
+              <script>
+                $(function () {
+                  $.getScript('./scripts/promo_generator.js', function () {
+                    generatePromos();
+                  });
                 });
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
+              </script>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="modal fade" id="contacts_modal" tabindex="-1" aria-labelledby="contactsModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contactsModalLabel">Контакты</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="contacts_body">
-            <script>
-              $(function () {
-                $("#contacts_body").load("./modals/contacts_modal_content.html");
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
+      <div class="modal-footer">
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="modal fade" id="company_modal" tabindex="-1" aria-labelledby="companyModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="companyModalLabel">О компании</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="company_body">
-            <script>
-              $(function () {
-                $("#company_body").load("./modals/company_modal_content.html");
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
+<div class="modal fade" id="payship_modal" tabindex="-1" aria-labelledby="payshipModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="payshipModalLabel">Оплата и доставка</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="payship_body">
+        <script>
+          $(function () {
+            $("#payship_body").load("./modals/payship_modal_content.html");
+          });
+        </script>
+      </div>
+      <div class="modal-footer">
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="modal fade" id="business_modal" tabindex="-1" aria-labelledby="businessModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="businessModalLabel">Бизнес под ключ</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="business_body">
-            <script>
-              $(function () {
-                $("#business_body").load("./modals/business_modal_content.html");
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="promo_modal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="promoModalLabel">Акции</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="promo_body">
+<div class="modal fade" id="catalog_modal" tabindex="-1">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-body">
+        <ul class="nav nav-pills catalog-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health"
+              type="button" role="tab" aria-controls="health" aria-selected="true"
+              value="ЗДОРОВЬЕ">Здоровье</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="beauty-tab" data-bs-toggle="tab" data-bs-target="#beauty" type="button"
+              role="tab" aria-controls="beauty" aria-selected="false" value="КРАСОТА">Красота</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition"
+              type="button" role="tab" aria-controls="nutrition" aria-selected="false"
+              value="НУТРИЕНТЫ">Нутриенты</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="protection-tab" data-bs-toggle="tab" data-bs-target="#protection"
+              type="button" role="tab" aria-controls="protection" aria-selected="false"
+              value="ЗАЩИТА">Защита</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="house-tab" data-bs-toggle="tab" data-bs-target="#house" type="button"
+              role="tab" aria-controls="house" aria-selected="false" value="ДОМ">Дом</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="brands-tab" data-bs-toggle="tab" data-bs-target="#brands" type="button"
+              role="tab" aria-controls="brands" aria-selected="false" value="БРЕНДЫ">Брендированная
+              продукция</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button"
+              role="tab" aria-controls="gear" aria-selected="false" value="CORAL GEAR">Coral Gear</button>
+          </li>
+          <button type="button" class="btn-close btn-catalog-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#health_products', 'ЗДОРОВЬЕ', this)">
+              <option selected>Без категории</option>
+              <option value="ИММУННАЯ ПОДДЕРЖКА">Иммунная поддержка</option>
+              <option value="ГИДРАТАЦИЯ">Гидратация</option>
+              <option value="ЭНЕРГИЯ">Энергия</option>
+              <option value="ОЧИЩЕНИЕ И ДЕТОКС">Очищение и детокс</option>
+              <option value="ПИЩЕВАРЕНИЕ">Пищеварение</option>
+              <option value="СМАРТ ФУД">Смарт фуд</option>
+              <option value="КОНТРОЛЬ ВЕСА">Контроль веса</option>
+              <option value="СЕРДЦЕ И СОСУДЫ">Сердце и сосуды</option>
+              <option value="СУСТАВЫ">Суставы</option>
+              <option value="ЗРЕНИЕ">Зрение</option>
+              <option value="АНТИСТРЕСС">Антистресс</option>
+              <option value="ЛИПОСОМАЛЬНЫЕ ФОРМУЛЫ">Липосомальные формулы</option>
+              <option value="ЗДОРОВЬЕ ДЕТЕЙ">Детское здоровье</option>
+              <option value="ЖЕНСКОЕ ЗДОРОВЬЕ">Женское здоровье</option>
+              <option value="МУЖСКОЕ ЗДОРОВЬЕ">Мужское здоровье</option>
+              <option value="КОМПЛЕКСНОЕ ОЗДОРОВЛЕНИЕ">Комплексное оздоровление</option>
+            </select>
             <div class="album py-5">
               <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="promo_container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="health_products">
                   <script>
-                    $(function () {
-                      $.getScript('./scripts/promo_generator.js', function () {
-                        generatePromos();
-                      });
-                    });
+                    generateProducts("#health_products", "ЗДОРОВЬЕ");
                   </script>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="payship_modal" tabindex="-1" aria-labelledby="payshipModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="payshipModalLabel">Оплата и доставка</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="payship_body">
-            <script>
-              $(function () {
-                $("#payship_body").load("./modals/payship_modal_content.html");
-              });
-            </script>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="catalog_modal" tabindex="-1">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-          <div class="modal-body">
-            <ul class="nav nav-pills catalog-tabs" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health"
-                  type="button" role="tab" aria-controls="health" aria-selected="true"
-                  value="ЗДОРОВЬЕ">Здоровье</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="beauty-tab" data-bs-toggle="tab" data-bs-target="#beauty" type="button"
-                  role="tab" aria-controls="beauty" aria-selected="false" value="КРАСОТА">Красота</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition"
-                  type="button" role="tab" aria-controls="nutrition" aria-selected="false"
-                  value="НУТРИЕНТЫ">Нутриенты</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="protection-tab" data-bs-toggle="tab" data-bs-target="#protection"
-                  type="button" role="tab" aria-controls="protection" aria-selected="false"
-                  value="ЗАЩИТА">Защита</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="house-tab" data-bs-toggle="tab" data-bs-target="#house" type="button"
-                  role="tab" aria-controls="house" aria-selected="false" value="ДОМ">Дом</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="brands-tab" data-bs-toggle="tab" data-bs-target="#brands" type="button"
-                  role="tab" aria-controls="brands" aria-selected="false" value="БРЕНДЫ">Брендированная
-                  продукция</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button"
-                  role="tab" aria-controls="gear" aria-selected="false" value="CORAL GEAR">Coral Gear</button>
-              </li>
-              <button type="button" class="btn-close btn-catalog-close" data-bs-dismiss="modal"
-                aria-label="Close"></button>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#health_products', 'ЗДОРОВЬЕ', this)">
-                  <option selected>Без категории</option>
-                  <option value="ИММУННАЯ ПОДДЕРЖКА">Иммунная поддержка</option>
-                  <option value="ГИДРАТАЦИЯ">Гидратация</option>
-                  <option value="ЭНЕРГИЯ">Энергия</option>
-                  <option value="ОЧИЩЕНИЕ И ДЕТОКС">Очищение и детокс</option>
-                  <option value="ПИЩЕВАРЕНИЕ">Пищеварение</option>
-                  <option value="СМАРТ ФУД">Смарт фуд</option>
-                  <option value="КОНТРОЛЬ ВЕСА">Контроль веса</option>
-                  <option value="СЕРДЦЕ И СОСУДЫ">Сердце и сосуды</option>
-                  <option value="СУСТАВЫ">Суставы</option>
-                  <option value="ЗРЕНИЕ">Зрение</option>
-                  <option value="АНТИСТРЕСС">Антистресс</option>
-                  <option value="ЛИПОСОМАЛЬНЫЕ ФОРМУЛЫ">Липосомальные формулы</option>
-                  <option value="ЗДОРОВЬЕ ДЕТЕЙ">Детское здоровье</option>
-                  <option value="ЖЕНСКОЕ ЗДОРОВЬЕ">Женское здоровье</option>
-                  <option value="МУЖСКОЕ ЗДОРОВЬЕ">Мужское здоровье</option>
-                  <option value="КОМПЛЕКСНОЕ ОЗДОРОВЛЕНИЕ">Комплексное оздоровление</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="health_products">
-                      <script>
-                        generateProducts("#health_products", "ЗДОРОВЬЕ");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#beauty_products', 'КРАСОТА', this)">
-                  <option selected>Без категории</option>
-                  <option value="ДЛЯ ЛИЦА">Для лица</option>
-                  <option value="ДЛЯ ТЕЛА">Для тела</option>
-                  <option value="ДЛЯ ВОЛОС">Для волос</option>
-                  <option value="АНТИЭЙДЖ">Антиэйдж</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="beauty_products">
-                      <script>
-                        generateProducts("#beauty_products", "КРАСОТА");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="nutrition" role="tabpanel" aria-labelledby="nutrition-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#nutrition_products', 'НУТРИЕНТЫ', this)">
-                  <option selected>Без категории</option>
-                  <option value="МИНЕРАЛЫ ДЛЯ ВОДЫ">Минералы для воды</option>
-                  <option value="ВИТАМИНЫ И МИНЕРАЛЫ">Витамины и минералы</option>
-                  <option value="ПНЖК И ФОСФОЛИПИДЫ">ПНЖК и Фосфолипиды</option>
-                  <option value="ПРОБИОТИКИ">Пробиотики</option>
-                  <option value="АМИНОКИСЛОТЫ">Аминокислоты</option>
-                  <option value="ФИТОНУТРИЕНТЫ">Фитонутриенты</option>
-                  <option value="ПРОТЕОГЛИКАНЫ">Протеогликаны</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="nutrition_products">
-                      <script>
-                        generateProducts("#nutrition_products", "НУТРИЕНТЫ");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="protection" role="tabpanel" aria-labelledby="protection-tab">
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="protection_products">
-                      <script>
-                        generateProducts("#protection_products", "ЗАЩИТА");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="house" role="tabpanel" aria-labelledby="house-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#house_products', 'ДОМ', this)">
-                  <option selected>Без категории</option>
-                  <option value="ALIVE ДЛЯ УБОРКИ">Alive для уборки</option>
-                  <option value="ALIVE ДЛЯ МЫТЬЯ ПОСУДЫ">Alive для мытья посуды</option>
-                  <option value="ALIVE ДЛЯ СТИРКИ">Alive для стирки</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="house_products">
-                      <script>
-                        generateProducts("#house_products", "ДОМ");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#brands_products', 'БРЕНДЫ', this)">
-                  <option selected>Без категории</option>
-                  <option value="ODA NATURALS">Oda Naturals</option>
-                  <option value="PRIVILEGE">Privilege</option>
-                  <option value="ALIVE">Alive</option>
-                  <option value="DAILY DELICIOUS">Daily Delicious</option>
-                  <option value="PURE & NATURAL">Pure & Natural</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="brands_products">
-                      <script>
-                        generateProducts("#brands_products", "БРЕНДЫ");
-                      </script>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="gear" role="tabpanel" aria-labelledby="gear-tab">
-                <select class="form-select" aria-label="Default select example"
-                  onchange="changeProducts('#gear_products', 'CORAL GEAR', this)">
-                  <option selected>Без категории</option>
-                  <option value="ТОВАРЫ ДЛЯ ДОМА">Товары для дома</option>
-                  <option value="ТОВАРЫ ДЛЯ СПОРТА">Товары для спорта</option>
-                  <option value="ТОВАРЫ ДЛЯ ПУТЕШЕСТВИЙ">Товары для путешествий</option>
-                  <option value="ТОВАРЫ ДЛЯ БИЗНЕСА">Товары для бизнеса</option>
-                </select>
-                <div class="album py-5">
-                  <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="gear_products">
-                      <script>
-                        generateProducts("#gear_products", "CORAL GEAR");
-                      </script>
-                    </div>
-                  </div>
+          <div class="tab-pane fade" id="beauty" role="tabpanel" aria-labelledby="beauty-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#beauty_products', 'КРАСОТА', this)">
+              <option selected>Без категории</option>
+              <option value="ДЛЯ ЛИЦА">Для лица</option>
+              <option value="ДЛЯ ТЕЛА">Для тела</option>
+              <option value="ДЛЯ ВОЛОС">Для волос</option>
+              <option value="АНТИЭЙДЖ">Антиэйдж</option>
+            </select>
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="beauty_products">
+                  <script>
+                    generateProducts("#beauty_products", "КРАСОТА");
+                  </script>
                 </div>
               </div>
             </div>
           </div>
-          <script>
-            $(function () {
-              var modal = document.getElementById('catalog_modal');
-              modal.addEventListener('shown.bs.modal', function (event) {
-                history.pushState('', 'Coral Club Moldova', '#catalog');
-                $("#myTabContent").find("select").css("margin-top", ($("#myTab").height()) + "px");
-              });
-              setTimeout(function () {
-                var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-                tooltips.forEach(element => {
-                  var prod_id = element.dataset.product;
-                  var prod = products.find(el => el.id == prod_id);
-                  var img = prod.image;
-                  element.setAttribute("title", "<img src='" + img + "' width=180px>");
-                  element.setAttribute("onclick", "focusElement(" + prod_id + ")");
-                  element.setAttribute("href", "javascript:void(0);");
-                  $(element).wrap(
-                    "<span data-bs-target=\"#catalog_modal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\"></span>"
-                    );
-                });
-                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                  return new bootstrap.Tooltip(tooltipTriggerEl);
-                });
-                enablePopovers();
-              }, 1000);
-            });
-            window.addEventListener('popstate', function (event) {
-              var modal = document.getElementById('catalog_modal');
-              var actualModal = bootstrap.Modal.getInstance(modal);
-              var currentURL = window.location.href;
-              var anchor = currentURL.split('#')[1];
-              if (anchor != '#catalog' && actualModal){
-                actualModal.hide();
-              }
-              else if (anchor == "#catalog" && actualModal)
-                actualModal.show();
-            });
-          </script>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary"
-              onclick="window.open('https://ru.coral.club/shop/catalog_pdf/ru/catalog.pdf', '_blank').focus()">Каталог
-              PDF</button>
-            <!--button type="button" class="btn btn-secondary" onclick="scrollCatalog();">Вверх</button-->
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <div class="tab-pane fade" id="nutrition" role="tabpanel" aria-labelledby="nutrition-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#nutrition_products', 'НУТРИЕНТЫ', this)">
+              <option selected>Без категории</option>
+              <option value="МИНЕРАЛЫ ДЛЯ ВОДЫ">Минералы для воды</option>
+              <option value="ВИТАМИНЫ И МИНЕРАЛЫ">Витамины и минералы</option>
+              <option value="ПНЖК И ФОСФОЛИПИДЫ">ПНЖК и Фосфолипиды</option>
+              <option value="ПРОБИОТИКИ">Пробиотики</option>
+              <option value="АМИНОКИСЛОТЫ">Аминокислоты</option>
+              <option value="ФИТОНУТРИЕНТЫ">Фитонутриенты</option>
+              <option value="ПРОТЕОГЛИКАНЫ">Протеогликаны</option>
+            </select>
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="nutrition_products">
+                  <script>
+                    generateProducts("#nutrition_products", "НУТРИЕНТЫ");
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="protection" role="tabpanel" aria-labelledby="protection-tab">
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="protection_products">
+                  <script>
+                    generateProducts("#protection_products", "ЗАЩИТА");
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="house" role="tabpanel" aria-labelledby="house-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#house_products', 'ДОМ', this)">
+              <option selected>Без категории</option>
+              <option value="ALIVE ДЛЯ УБОРКИ">Alive для уборки</option>
+              <option value="ALIVE ДЛЯ МЫТЬЯ ПОСУДЫ">Alive для мытья посуды</option>
+              <option value="ALIVE ДЛЯ СТИРКИ">Alive для стирки</option>
+            </select>
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="house_products">
+                  <script>
+                    generateProducts("#house_products", "ДОМ");
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#brands_products', 'БРЕНДЫ', this)">
+              <option selected>Без категории</option>
+              <option value="ODA NATURALS">Oda Naturals</option>
+              <option value="PRIVILEGE">Privilege</option>
+              <option value="ALIVE">Alive</option>
+              <option value="DAILY DELICIOUS">Daily Delicious</option>
+              <option value="PURE & NATURAL">Pure & Natural</option>
+            </select>
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="brands_products">
+                  <script>
+                    generateProducts("#brands_products", "БРЕНДЫ");
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="gear" role="tabpanel" aria-labelledby="gear-tab">
+            <select class="form-select" aria-label="Default select example"
+              onchange="changeProducts('#gear_products', 'CORAL GEAR', this)">
+              <option selected>Без категории</option>
+              <option value="ТОВАРЫ ДЛЯ ДОМА">Товары для дома</option>
+              <option value="ТОВАРЫ ДЛЯ СПОРТА">Товары для спорта</option>
+              <option value="ТОВАРЫ ДЛЯ ПУТЕШЕСТВИЙ">Товары для путешествий</option>
+              <option value="ТОВАРЫ ДЛЯ БИЗНЕСА">Товары для бизнеса</option>
+            </select>
+            <div class="album py-5">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="gear_products">
+                  <script>
+                    generateProducts("#gear_products", "CORAL GEAR");
+                  </script>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <script>
+        $(function () {
+          var modal = document.getElementById('catalog_modal');
+          modal.addEventListener('shown.bs.modal', function (event) {
+            history.pushState('', 'Coral Club Moldova', '#catalog');
+            $("#myTabContent").find("select").css("margin-top", ($("#myTab").height()) + "px");
+          });
+          setTimeout(function () {
+            var tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            tooltips.forEach(element => {
+              var prod_id = element.dataset.product;
+              var prod = products.find(el => el.id == prod_id);
+              var img = prod.image;
+              element.setAttribute("title", "<img src='" + img + "' width=180px>");
+              element.setAttribute("onclick", "focusElement(" + prod_id + ")");
+              element.setAttribute("href", "javascript:void(0);");
+              $(element).wrap(
+                "<span data-bs-target=\"#catalog_modal\" data-bs-toggle=\"modal\" data-bs-dismiss=\"modal\"></span>"
+                );
+            });
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            enablePopovers();
+          }, 1000);
+        });
+        window.addEventListener('popstate', function (event) {
+          var modal = document.getElementById('catalog_modal');
+          var actualModal = bootstrap.Modal.getInstance(modal);
+          var currentURL = window.location.href;
+          var anchor = currentURL.split('#')[1];
+          if (anchor != '#catalog' && actualModal){
+            actualModal.hide();
+          }
+          else if (anchor == "#catalog" && actualModal)
+            actualModal.show();
+        });
+      </script>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          onclick="window.open('https://ru.coral.club/shop/catalog_pdf/ru/catalog.pdf', '_blank').focus()">Каталог
+          PDF</button>
+        <!--button type="button" class="btn btn-secondary" onclick="scrollCatalog();">Вверх</button-->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
     </div>
-    <button onclick="topFunction()" class="btn btn-outline-secondary" style="padding: 1rem 1.2rem;" id="topButton" title="В начало"><i class="bi bi-arrow-up"></i></button>
+  </div>
+</div>
+
+    <button onclick="topFunction()" class="btn btn-outline-secondary" style="padding: 1rem 1.2rem;" id="topButton"
+      title="В начало"><i class="bi bi-arrow-up"></i></button>
     <script src="scripts/top_button.js"></script>
     <footer class="container">
       <p class="float-end"><a href="#">В начало</a></p>
