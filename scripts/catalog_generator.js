@@ -2546,15 +2546,16 @@ function enablePopovers(){
 function focusElement(product_id){
     disableScroll();
     var prod = products.find(el => el.id == product_id);
-    var tabs = $(".catalog-tabs");
     var box = document.getElementById("product"+product_id);
     setTimeout(function(){
        switchTab(prod.category[0]);
         box.scrollIntoView({block: "center", behavior: "smooth"});
     }, 1000);
     setTimeout(function(){
+        box.style.animation = 'fader 1.5s forwards';
         enableScroll();
     }, 2000);
+    box.style.animation = null;
 }
 
 function scrollCatalog(){
